@@ -1,0 +1,15 @@
+{
+    "recommendations": [
+        "georgykurian.laravel-ide-helper",
+        "m1guelpf.better-pest",
+        "streetsidesoftware.code-spell-checker",
+        "devsense.composer-php-vscode",
+        "laravel.vscode-laravel",
+        "open-southeners.laravel-pint",
+        "msamgan.laravel-pint-vscode",
+        "devsense.phptools-vscode",
+        "mehedidracula.php-namespace-resolver",
+        "dannyconnell.split-html-attributes",
+        "liamhammett.temphpest"
+    ]
+}

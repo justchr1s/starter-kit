@@ -1,6 +1,6 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "laravel/laravel",
+    "name": "digitax/digitax",
     "type": "project",
     "description": "The skeleton application for the Laravel framework.",
     "keywords": ["laravel", "framework"],
@@ -8,7 +8,8 @@
     "require": {
         "php": "^8.2",
         "laravel/framework": "^12.0",
-        "laravel/tinker": "^2.10.1"
+        "laravel/tinker": "^2.10.1",
+        "nunomaduro/essentials": "^0.1.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
@@ -51,10 +52,34 @@
             "Composer\\Config::disableProcessTimeout",
             "npx concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1\" \"php artisan pail --timeout=0\" \"npm run dev\" --names=server,queue,logs,vite --kill-others"
         ],
+        "lint": [
+            "./vendor/bin/pint"
+        ],
+        "refactor": "./vendor/bin/rector process",
+        "fix": [
+            "@test:types",
+            "@refactor",
+            "npm run lint:fix",
+            "./vendor/bin/pint"
+        ],
+        "test:typos": "./vendor/bin/peck",
+        "test:lint": [
+            "./vendor/bin/pint --test",
+            "npm run test:lint"
+        ],
+        "test:unit": "./vendor/bin/pest --parallel",
+        "test:unit:coverage": "./vendor/bin/pest --parallel --coverage",
+        "test:types": "./vendor/bin/phpstan analyse --memory-limit=256M",
+        "test:refactor": "./vendor/bin/rector process --dry-run",
         "test": [
-            "@php artisan config:clear --ansi",
-            "@php artisan test"
-        ]
+            "@test:typos",
+            "@test:unit",
+            "@test:lint",
+            "@test:types",
+            "@test:refactor"
+        ],
+        "phpstan": "./vendor/bin/phpstan analyse --memory-limit=256M",
+        "phpstan-baseline": "./vendor/bin/phpstan analyse --generate-baseline --memory-limit=256M"
     },
     "extra": {
         "laravel": {
