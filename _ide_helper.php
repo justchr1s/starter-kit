@@ -22900,6 +22900,41 @@ namespace Illuminate\Support\Facades {
             }
     }
 
+namespace Illuminate\Support {
+    /**
+     * @template TKey of array-key
+     * @template-covariant TValue
+     * @implements \ArrayAccess<TKey, TValue>
+     * @implements \Illuminate\Support\Enumerable<TKey, TValue>
+     */
+    class Collection {
+        /**
+         * @see \LaraDumps\LaraDumps\LaraDumpsServiceProvider::registerMacros()
+         * @param string $label
+         * @static
+         */
+        public static function ds($label = '')
+        {
+            return \Illuminate\Support\Collection::ds($label);
+        }
+
+            }
+    /**
+     */
+    class Stringable {
+        /**
+         * @see \LaraDumps\LaraDumps\LaraDumpsServiceProvider::registerMacros()
+         * @param string $label
+         * @static
+         */
+        public static function ds($label = '')
+        {
+            return \Illuminate\Support\Stringable::ds($label);
+        }
+
+            }
+    }
+
 namespace Illuminate\Http {
     /**
      */
@@ -22965,6 +23000,40 @@ namespace Illuminate\Http {
         public static function hasValidRelativeSignatureWhileIgnoring($ignoreQuery = [])
         {
             return \Illuminate\Http\Request::hasValidRelativeSignatureWhileIgnoring($ignoreQuery);
+        }
+
+            }
+    }
+
+namespace Illuminate\Database\Query {
+    /**
+     */
+    class Builder {
+        /**
+         * @see \LaraDumps\LaraDumps\LaraDumpsServiceProvider::registerMacros()
+         * @static
+         */
+        public static function ds()
+        {
+            return \Illuminate\Database\Query\Builder::ds();
+        }
+
+            }
+    }
+
+namespace Illuminate\Testing {
+    /**
+     * @template TResponse of \Symfony\Component\HttpFoundation\Response
+     * @mixin \Illuminate\Http\Response
+     */
+    class TestResponse {
+        /**
+         * @see \LaraDumps\LaraDumps\LaraDumpsServiceProvider::registerMacros()
+         * @static
+         */
+        public static function ds()
+        {
+            return \Illuminate\Testing\TestResponse::ds();
         }
 
             }
@@ -27799,6 +27868,15 @@ namespace  {
         {
             /** @var \Illuminate\Database\Query\Builder $instance */
             return $instance->macroCall($method, $parameters);
+        }
+
+        /**
+         * @see \LaraDumps\LaraDumps\LaraDumpsServiceProvider::registerMacros()
+         * @static
+         */
+        public static function ds()
+        {
+            return \Illuminate\Database\Query\Builder::ds();
         }
 
 }
