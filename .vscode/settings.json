@@ -1,6 +1,7 @@
 {
     "cSpell.words": [
         "analyse",
+        "barryvdh",
         "bigdecimal",
         "bignum",
         "Blanco",
@@ -21,6 +22,7 @@
         "phpactor",
         "phpredis",
         "phpstan",
+        "phpstorm",
         "phpunit",
         "Schmitt",
         "squizlabs",
