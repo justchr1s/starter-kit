@@ -24,6 +24,7 @@
         "phpunit",
         "Schmitt",
         "squizlabs",
-        "sslmode"
+        "sslmode",
+        "VITE"
     ]
 }
