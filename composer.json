@@ -18,7 +18,8 @@
         "laravel/sail": "^1.41",
         "mockery/mockery": "^1.6",
         "nunomaduro/collision": "^8.6",
-        "phpunit/phpunit": "^11.5.3"
+        "phpunit/phpunit": "^11.5.3",
+        "rector/rector": "^2.1"
     },
     "autoload": {
         "psr-4": {
@@ -53,24 +54,24 @@
             "npx concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1\" \"php artisan pail --timeout=0\" \"npm run dev\" --names=server,queue,logs,vite --kill-others"
         ],
         "lint": [
-            "./vendor/bin/pint"
+            "pint --parallel"
         ],
-        "refactor": "./vendor/bin/rector process",
+        "refactor": "rector process",
         "fix": [
             "@test:types",
             "@refactor",
             "npm run lint:fix",
-            "./vendor/bin/pint"
+            "pint"
         ],
-        "test:typos": "./vendor/bin/peck",
+        "test:typos": "peck",
         "test:lint": [
-            "./vendor/bin/pint --test",
+            "pint --parallel --test",
             "npm run test:lint"
         ],
-        "test:unit": "./vendor/bin/pest --parallel",
-        "test:unit:coverage": "./vendor/bin/pest --parallel --coverage",
-        "test:types": "./vendor/bin/phpstan analyse --memory-limit=256M",
-        "test:refactor": "./vendor/bin/rector process --dry-run",
+        "test:unit": "pest --parallel",
+        "test:unit:coverage": "pest --parallel --coverage",
+        "test:types": "phpstan analyse --memory-limit=256M",
+        "test:refactor": "rector process --dry-run",
         "test": [
             "@test:typos",
             "@test:unit",
@@ -78,8 +79,8 @@
             "@test:types",
             "@test:refactor"
         ],
-        "phpstan": "./vendor/bin/phpstan analyse --memory-limit=256M",
-        "phpstan-baseline": "./vendor/bin/phpstan analyse --generate-baseline --memory-limit=256M"
+        "phpstan": "phpstan analyse --memory-limit=256M",
+        "phpstan-baseline": "phpstan analyse --generate-baseline --memory-limit=256M"
     },
     "extra": {
         "laravel": {
