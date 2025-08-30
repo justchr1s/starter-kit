@@ -1,12 +1,7 @@
 {
     "preset": "laravel",
     "ignore": {
-        "words": [
-            "php",
-            "js",
-            "favicon",
-            "filesystems"
-        ],
+        "words": ["php", "js", "favicon", "pnpm", "filesystems"],
         "paths": []
     }
 }
