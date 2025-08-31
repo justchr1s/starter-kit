@@ -253,7 +253,7 @@ This project is released under the **MIT License** .
 
 ---
 
-## Acknowledgements
+## 🙏 Acknowledgements
 
 This starter kit was inspired by [Josh Cirre's Fission](https://github.com/joshcirre/fission).  
 A huge thanks to Josh for his amazing work and contributions to the Laravel community.
