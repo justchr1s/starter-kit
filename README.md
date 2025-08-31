@@ -189,6 +189,7 @@ Runs Rector in **dry-run mode** to preview refactoring changes before applying t
 
 ## 📂 Project Structure
 
+```md
 starter-kit/
 ├── app/
 ├── bootstrap/
@@ -199,6 +200,7 @@ starter-kit/
 ├── routes/
 ├── storage/
 └── tests/
+```
 
 ---
 
