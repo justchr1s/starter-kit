@@ -1,61 +1,281 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🚀 Laravel Starter Kit
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A **modern Laravel Starter Kit** built to speed up development with a **clean structure**, **powerful tools**, and **developer-friendly commands**.
+This project is based on **Laravel 12** and comes with everything you need to start building production-ready applications fast.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## ✨ Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- ⚡ **Fast local development** → concurrent processes for Laravel, queues, logs, and Vite.
+- 🧩 **IDE support** → better autocompletion with Laravel IDE Helper.
+- 🧹 **Automatic code formatting** → Laravel Pint & ESLint.
+- 🧠 **Static analysis & type safety** → powered by Larastan (PHPStan).
+- 🧪 **Testing setup** → Pest included with parallel support.
+- 🔄 **Automated refactoring** → Rector integration.
+- 🐛 **Debugging made easy** → Telescope & Laradumps pre-installed.
+- 📊 **Code quality checks** → typos, linting, types, and refactor tests.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## 📦 Prerequisites
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Before installing, ensure you have the following installed:
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- **PHP** `>= 8.2`
+- **Composer** `>= 2.5`
+- **Node.js** `>= 18`
+- **npm** `>= 9`
+- **MySQL** or **PostgreSQL** (optional for local development)
+- **Git**
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## 🚀 Installation
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 1. Clone the repository
 
-### Premium Partners
+```bash
+git clone https://github.com/your-username/starter-kit.git
+cd starter-kit
+```
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### 2. Install PHP dependencies
 
-## Contributing
+```bash
+composer install
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 3. Install Node.js dependencies
 
-## Code of Conduct
+```bash
+npm install
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 4. Configure environment variables
 
-## Security Vulnerabilities
+```bash
+cp .env.example .env
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Then generate the application key:
 
-## License
+```bash
+php artisan key:generate
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 5. Run database migrations (optional)
+
+```bash
+php artisan migrate --seed
+```
+
+---
+
+## 🛠 Available Commands
+
+This starter kit comes with **custom Composer scripts** to simplify your workflow.
+
+### 📌 Development
+
+```bash
+composer dev
+```
+
+> Starts everything you need for local development **in parallel** :
+
+- Laravel server → `php artisan serve`
+- Queue listener → `php artisan queue:listen`
+- Log watcher → `php artisan pail`
+- Vite → `npm run dev`
+
+---
+
+### 🧩 IDE Helpers
+
+```bash
+composer ide
+```
+
+Generates IDE helpers for:
+
+- Model metadata.
+- Helper functions.
+- Better autocompletion in your IDE.
+
+---
+
+### 🧹 Linting & Code Style
+
+```bash
+composer lint
+```
+
+Runs:
+
+- **Laravel Pint** → PHP code formatting.
+- **ESLint** → JavaScript/Vue code linting.
+
+To automatically fix issues:
+
+```bash
+composer fix
+```
+
+This also:
+
+- Generates IDE helpers.
+- Runs PHPStan for types.
+- Applies Rector refactors.
+- Fixes PHP & JS code style.
+
+---
+
+### 🧪 Testing
+
+#### Run all tests
+
+```bash
+composer test
+```
+
+#### Run unit tests only
+
+```bash
+composer test:unit
+```
+
+#### Run unit tests with coverage
+
+```bash
+composer test:unit:coverage
+```
+
+#### Check for code typos
+
+```bash
+composer test:typos
+```
+
+---
+
+### 🔎 Static Analysis
+
+```bash
+composer test:types
+```
+
+Uses **PHPStan** (via Larastan) to detect type-related issues.
+
+If you want to regenerate the baseline:
+
+```bash
+composer phpstan-baseline
+```
+
+---
+
+### 🔄 Refactoring
+
+```bash
+composer refactor
+```
+
+Automatically refactors your codebase using **Rector** .
+
+---
+
+### 🧪 Test Your Refactors
+
+```bash
+composer test:refactor
+```
+
+Runs Rector in **dry-run mode** to preview refactoring changes before applying them.
+
+---
+
+## 📂 Project Structure
+
+starter-kit/
+├── app/
+├── bootstrap/
+├── config/
+├── database/
+├── public/
+├── resources/
+├── routes/
+├── storage/
+└── tests/
+
+---
+
+## 🧑‍💻 Recommended Workflow
+
+```bash
+# Start development environment
+composer dev
+
+# Run migrations
+php artisan migrate
+
+# Run tests before pushing changes
+composer test
+
+# Fix code style & refactor automatically
+composer fix
+
+# Update IDE helpers for better autocompletion
+composer ide
+
+```
+
+---
+
+## 🛠 Included Packages
+
+| Package                         | Purpose                             |
+| --------------------------------- | ------------------------------------- |
+| **laravel/telescope**           | Debugging & monitoring              |
+| **laradumps/laradumps**         | Real-time debugging in terminal     |
+| **barryvdh/laravel-ide-helper** | Better IDE autocompletion           |
+| **laravel/pint**                | Automatic PHP code formatting       |
+| **larastan/larastan**           | PHPStan integration for type safety |
+| **pestphp/pest**                | Simple & fast testing framework     |
+| **rector/rector**               | Automated code refactoring          |
+| **peckphp/peck**                | Detect typos in code                |
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome!
+
+Feel free to fork the repository, create a branch, and submit a pull request.
+
+---
+
+## 📄 License
+
+This project is released under the **MIT License** .
+
+---
+
+## 💡 Tips
+
+- Always run `composer fix` before committing.
+- Use `composer test` to validate your changes.
+- Check your IDE helpers regularly with `composer ide`.
+- Use Telescope & Laradumps to debug faster.
+
+---
+
+## 🛡️ Badges
+
+You can add these to make the README more visual:
+
+![Laravel](https://img.shields.io/badge/Laravel-12.x-red)
+![PHP](https://img.shields.io/badge/PHP-%5E8.2-blue)
+![Tests](https://img.shields.io/badge/Tests-Pest-brightgreen)
+![Code Quality](https://img.shields.io/badge/Code_Quality-PHPStan-orange)
+![License](https://img.shields.io/badge/License-MIT-lightgrey)
