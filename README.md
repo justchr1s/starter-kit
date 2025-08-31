@@ -229,7 +229,7 @@ composer ide
 ## 🛠 Included Packages
 
 | Package                         | Purpose                             |
-| --------------------------------- | ------------------------------------- |
+| ------------------------------- | ----------------------------------- |
 | **laravel/telescope**           | Debugging & monitoring              |
 | **laradumps/laradumps**         | Real-time debugging in terminal     |
 | **barryvdh/laravel-ide-helper** | Better IDE autocompletion           |
