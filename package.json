@@ -7,8 +7,7 @@
         "dev": "vite",
         "lint": "prettier --check .",
         "lint:fix": "prettier --write .",
-        "test:lint": "prettier --check .",
-        "postinstall": "composer fix"
+        "test:lint": "prettier --check ."
     },
     "devDependencies": {
         "@shufo/prettier-plugin-blade": "^1.16.1",
