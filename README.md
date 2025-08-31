@@ -33,41 +33,33 @@ Before installing, ensure you have the following installed:
 
 ## 🚀 Installation
 
-### 1. Clone the repository
+### **Option 1 — Recommended (Fastest)** ✅
+
+Install a **new Laravel project** directly with the starter kit
 
 ```bash
-git clone https://github.com/your-username/starter-kit.git
-cd starter-kit
+laravel new my-app --using justchr1s/starter-kit
+cd my-app
+
 ```
 
-### 2. Install PHP dependencies
+That’s it! Your project is ready to go 🚀
+
+---
+
+### **Option 2 — Manual Installation**
+
+If you prefer cloning manually
 
 ```bash
+git clone https://github.com/justchr1s/starter-kit.git my-app
+cd my-app
 composer install
-```
-
-### 3. Install Node.js dependencies
-
-```bash
 npm install
-```
-
-### 4. Configure environment variables
-
-```bash
 cp .env.example .env
-```
-
-Then generate the application key:
-
-```bash
 php artisan key:generate
-```
-
-### 5. Run database migrations (optional)
-
-```bash
 php artisan migrate --seed
+
 ```
 
 ---
